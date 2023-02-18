@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main-program that prints with printf
- * return: 0 (done)
+ * main - program that prints with printf
+ * Return: Always  0 (success)
  */
 int main(void)
 {
