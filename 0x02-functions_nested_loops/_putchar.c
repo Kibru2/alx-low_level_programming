@@ -2,6 +2,7 @@
 
 /**
  * Description - program that prints _putchar, followed by a new line
+ * character to print C
  * Return: 1 (success)
  * Return: -1 (error)
  */
