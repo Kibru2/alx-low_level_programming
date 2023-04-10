@@ -1,49 +1,46 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 
 /**
- * string_nconcat - function to concatnate strings with n bytes
- * @s1: destination for concatnation
- * @s2: source of string
- * @n: int type for size of byte
- * Return: pointer to new memory allocated
+ * _strdup - copy of the string given as a parameter.
+ *
+ * @str: unsigned int
+ *
+ * Return: char pointer
  */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *_strdup(char *str)
 {
-	int count, count1;
-	int sign = n;
-	char *ptr;
-	int len1, len2;
+	unsigned int counter1, counter2;
+	char *strCopy;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	counter1 = 0;
+	counter2 = 0;
 
-	for (len1 = 0; s1[len1] != '\0'; len1++)
-		;
-	for (len2 = 0; s2[len2] != '\0'; len2++)
-		;
-
-	if (sign >= len2)
+	if (str == NULL)
 	{
-		sign = len2;
-		ptr = malloc(sizeof(char) * (len1 + len2 + 1));
+		return (0);
 	}
-	else
-		ptr = malloc(sizeof(char) * (len1 + n + 1));
-	if (ptr == NULL)
+
+	while (str[counter1] != '\0')
+	{
+		counter1++;
+	}
+
+	strCopy = malloc(sizeof(char) * (counter1 + 1));
+
+	if (strCopy == NULL)
+	{
 		return (NULL);
-	for (count = 0; count < len1; count++)
-	{
-		ptr[count] = s1[count];
 	}
-	for (count1 = 0; count1 < sign; count1++)
+
+	while (counter2 < counter1)
 	{
-		ptr[count++] = s2[count1];
+		strCopy[counter2] = str[counter2];
+		counter2++;
 	}
-	ptr[count++] = '\0';
-	return (ptr);
+
+	strCopy[counter2] = '\0';
+
+	return (strCopy);
 }
